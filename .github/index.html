@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mr. Evans' Classroom</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; max-width: 800px; margin: auto; }
+    h1, h2 { color: #333; }
+    section { margin-bottom: 2rem; }
+    button { padding: 0.5rem 1rem; font-size: 1rem; }
+    #dice-result { font-size: 2rem; margin-top: 0.5rem; }
+    form input, form textarea { display: block; width: 100%; margin: 0.5rem 0; padding: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Mr. Evans' Classroom</h1>
+
+  <!-- Dice of Destiny -->
+  <section>
+    <h2>🎲 Dice of Destiny</h2>
+    <p>Click the button to roll a 12-sided die for a class starter!</p>
+    <button onclick="rollDice()">Roll</button>
+    <p id="dice-result"></p>
+  </section>
+
+  <!-- Contact Form -->
+  <section>
+    <h2>📬 Contact Mr. Evans</h2>
+    <form id="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <input type="text" name="contact" placeholder="How can I reach you?" required>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Photo Section -->
+  <section>
+    <h2>📷 Class Highlights</h2>
+    <img src="photo1.jpg" alt="Class activity" width="100%">
+    <img src="photo2.jpg" alt="Project example" width="100%">
+  </section>
+
+  <script>
+    const starters = [
+      "What's something you're proud of this week?",
+      "Describe your dream vacation.",
+      "What’s a goal you have right now?",
+      "Share a time you helped someone.",
+      "What’s your favorite thing to do alone?",
+      "What book/movie would you recommend?",
+      "What's a small win from yesterday?",
+      "If you had a superpower, what would it be?",
+      "Describe your perfect weekend.",
+      "What’s something kind someone did for you?",
+      "What’s a challenge you're working on?",
+      "What's something you're excited about?"
+    ];
+
+    function rollDice() {
+      const index = Math.floor(Math.random() * 12);
+      document.getElementById('dice-result').textContent = starters[index];
+    }
+  </script>
+
+</body>
+</html>
